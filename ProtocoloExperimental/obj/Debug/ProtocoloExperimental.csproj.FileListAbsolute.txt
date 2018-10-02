@@ -1,0 +1,10 @@
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental\ProtocoloExperimental\bin\Debug\ProtocoloExperimental.exe.config
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental\ProtocoloExperimental\bin\Debug\ProtocoloExperimental.exe
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental\ProtocoloExperimental\bin\Debug\ProtocoloExperimental.pdb
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.csprojResolveAssemblyReference.cache
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.Properties.Resources.resources
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.csproj.GenerateResource.cache
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.csproj.CoreCompileInputs.cache
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.exe
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.pdb
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.MainForm.resources
