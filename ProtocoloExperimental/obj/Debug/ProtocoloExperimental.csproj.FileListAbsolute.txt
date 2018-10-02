@@ -8,3 +8,23 @@ D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Cur
 D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.exe
 D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.pdb
 D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.MainForm.resources
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental-2\ProtocoloExperimental\bin\Debug\ProtocoloExperimental.exe.config
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental-2\ProtocoloExperimental\bin\Debug\ProtocoloExperimental.exe
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental-2\ProtocoloExperimental\bin\Debug\ProtocoloExperimental.pdb
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental-2\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.MainForm.resources
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental-2\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.Properties.Resources.resources
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental-2\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.csproj.GenerateResource.cache
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental-2\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.csproj.CoreCompileInputs.cache
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental-2\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.exe
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental-2\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.pdb
+D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Códigos\ProtocoloExperimental-2\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.csprojAssemblyReference.cache
+C:\Users\BioLab\Desktop\GitHub\Protocolo_de_Coleta_EMG\ProtocoloExperimental\bin\Debug\ProtocoloExperimental.exe.config
+C:\Users\BioLab\Desktop\GitHub\Protocolo_de_Coleta_EMG\ProtocoloExperimental\bin\Debug\ProtocoloExperimental.exe
+C:\Users\BioLab\Desktop\GitHub\Protocolo_de_Coleta_EMG\ProtocoloExperimental\bin\Debug\ProtocoloExperimental.pdb
+C:\Users\BioLab\Desktop\GitHub\Protocolo_de_Coleta_EMG\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.csprojAssemblyReference.cache
+C:\Users\BioLab\Desktop\GitHub\Protocolo_de_Coleta_EMG\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.MainForm.resources
+C:\Users\BioLab\Desktop\GitHub\Protocolo_de_Coleta_EMG\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.Properties.Resources.resources
+C:\Users\BioLab\Desktop\GitHub\Protocolo_de_Coleta_EMG\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.csproj.GenerateResource.cache
+C:\Users\BioLab\Desktop\GitHub\Protocolo_de_Coleta_EMG\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.csproj.CoreCompileInputs.cache
+C:\Users\BioLab\Desktop\GitHub\Protocolo_de_Coleta_EMG\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.exe
+C:\Users\BioLab\Desktop\GitHub\Protocolo_de_Coleta_EMG\ProtocoloExperimental\obj\Debug\ProtocoloExperimental.pdb

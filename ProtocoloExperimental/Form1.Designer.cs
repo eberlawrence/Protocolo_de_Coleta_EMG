@@ -39,13 +39,13 @@
             this.lbStartMessage = new System.Windows.Forms.Label();
             this.TimerTwo = new System.Windows.Forms.Timer(this.components);
             this.pnMain = new System.Windows.Forms.Panel();
-            this.lbCount = new System.Windows.Forms.Label();
+            this.lbMoviment = new System.Windows.Forms.Label();
             this.pbTrigger = new System.Windows.Forms.PictureBox();
             this.lb3 = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
             this.btOne = new System.Windows.Forms.Button();
             this.pbTwo = new System.Windows.Forms.PictureBox();
-            this.lbMoviment = new System.Windows.Forms.Label();
+            this.TimerThree = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
             this.pnMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTrigger)).BeginInit();
@@ -56,9 +56,9 @@
             // 
             this.pbMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pbMain.BackColor = System.Drawing.Color.White;
-            this.pbMain.Location = new System.Drawing.Point(365, 12);
+            this.pbMain.Location = new System.Drawing.Point(421, 12);
             this.pbMain.Name = "pbMain";
-            this.pbMain.Size = new System.Drawing.Size(349, 502);
+            this.pbMain.Size = new System.Drawing.Size(371, 507);
             this.pbMain.TabIndex = 1;
             this.pbMain.TabStop = false;
             // 
@@ -75,7 +75,7 @@
             // 
             // TimerOne
             // 
-            this.TimerOne.Interval = 1000;
+            this.TimerOne.Interval = 1;
             this.TimerOne.Tick += new System.EventHandler(this.TimerOne_Tick);
             // 
             // lbCountT
@@ -121,15 +121,15 @@
             // lbStartMessage
             // 
             this.lbStartMessage.AutoSize = true;
-            this.lbStartMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStartMessage.Location = new System.Drawing.Point(12, 12);
+            this.lbStartMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStartMessage.Location = new System.Drawing.Point(12, 9);
             this.lbStartMessage.Name = "lbStartMessage";
-            this.lbStartMessage.Size = new System.Drawing.Size(0, 46);
+            this.lbStartMessage.Size = new System.Drawing.Size(0, 63);
             this.lbStartMessage.TabIndex = 8;
             // 
             // TimerTwo
             // 
-            this.TimerTwo.Interval = 1000;
+            this.TimerTwo.Interval = 400;
             this.TimerTwo.Tick += new System.EventHandler(this.TimerTwo_Tick);
             // 
             // pnMain
@@ -138,7 +138,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnMain.Controls.Add(this.lbMoviment);
-            this.pnMain.Controls.Add(this.lbCount);
             this.pnMain.Controls.Add(this.pbTrigger);
             this.pnMain.Controls.Add(this.lb3);
             this.pnMain.Controls.Add(this.tbName);
@@ -152,25 +151,24 @@
             this.pnMain.Controls.Add(this.pbTwo);
             this.pnMain.Location = new System.Drawing.Point(0, 0);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(731, 526);
+            this.pnMain.Size = new System.Drawing.Size(868, 526);
             this.pnMain.TabIndex = 9;
-            this.pnMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnMain_Paint);
             // 
-            // lbCount
+            // lbMoviment
             // 
-            this.lbCount.AutoSize = true;
-            this.lbCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCount.Location = new System.Drawing.Point(140, 273);
-            this.lbCount.Name = "lbCount";
-            this.lbCount.Size = new System.Drawing.Size(110, 120);
-            this.lbCount.TabIndex = 13;
-            this.lbCount.Text = "0";
+            this.lbMoviment.AutoSize = true;
+            this.lbMoviment.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMoviment.Location = new System.Drawing.Point(3, 431);
+            this.lbMoviment.Name = "lbMoviment";
+            this.lbMoviment.Size = new System.Drawing.Size(300, 76);
+            this.lbMoviment.TabIndex = 14;
+            this.lbMoviment.Text = "Repouso";
             // 
             // pbTrigger
             // 
-            this.pbTrigger.Location = new System.Drawing.Point(36, 14);
+            this.pbTrigger.Location = new System.Drawing.Point(27, 12);
             this.pbTrigger.Name = "pbTrigger";
-            this.pbTrigger.Size = new System.Drawing.Size(8, 8);
+            this.pbTrigger.Size = new System.Drawing.Size(10, 10);
             this.pbTrigger.TabIndex = 12;
             this.pbTrigger.TabStop = false;
             // 
@@ -189,43 +187,39 @@
             this.tbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbName.Location = new System.Drawing.Point(214, 153);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(135, 30);
+            this.tbName.Size = new System.Drawing.Size(145, 30);
             this.tbName.TabIndex = 10;
+            this.tbName.Text = "VOLUNTÁRIO";
             // 
             // btOne
             // 
             this.btOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btOne.Location = new System.Drawing.Point(4, 48);
+            this.btOne.Location = new System.Drawing.Point(24, 12);
             this.btOne.Name = "btOne";
             this.btOne.Size = new System.Drawing.Size(10, 10);
             this.btOne.TabIndex = 0;
             this.btOne.Text = "Pronto";
             this.btOne.UseVisualStyleBackColor = true;
-            this.btOne.Click += new System.EventHandler(this.btOne_Click);
+            this.btOne.Click += new System.EventHandler(this.BtOne_Click);
             // 
             // pbTwo
             // 
-            this.pbTwo.Location = new System.Drawing.Point(4, 12);
+            this.pbTwo.Location = new System.Drawing.Point(24, 12);
             this.pbTwo.Name = "pbTwo";
             this.pbTwo.Size = new System.Drawing.Size(10, 10);
             this.pbTwo.TabIndex = 9;
             this.pbTwo.TabStop = false;
             // 
-            // lbMoviment
+            // TimerThree
             // 
-            this.lbMoviment.AutoSize = true;
-            this.lbMoviment.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMoviment.Location = new System.Drawing.Point(16, 318);
-            this.lbMoviment.Name = "lbMoviment";
-            this.lbMoviment.Size = new System.Drawing.Size(0, 46);
-            this.lbMoviment.TabIndex = 14;
+            this.TimerThree.Interval = 1000;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(731, 526);
+            this.ClientSize = new System.Drawing.Size(868, 526);
             this.Controls.Add(this.pbMain);
             this.Controls.Add(this.pnMain);
             this.Name = "MainForm";
@@ -257,8 +251,8 @@
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label lb3;
         private System.Windows.Forms.PictureBox pbTrigger;
-        private System.Windows.Forms.Label lbCount;
         private System.Windows.Forms.Label lbMoviment;
+        private System.Windows.Forms.Timer TimerThree;
     }
 }
 

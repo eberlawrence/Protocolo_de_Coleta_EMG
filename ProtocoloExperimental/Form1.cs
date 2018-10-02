@@ -8,40 +8,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 
 namespace ProtocoloExperimental
 {
     public partial class MainForm : Form
     {
-
-
+        // Variavel para embaralhar as classes
         Random randonNum = new Random();
+        // Lista de imagens dos movimentos que devem ser executados
         List<Bitmap> imageList = new List<Bitmap>();
-        List<int> fourMoviments = new List<int>() { 1, 2, 3, 4 };
-        int[] dataList = new int[360];
+        // Classes que serão embaralhadas
+        List<int> SixMoviments = new List<int>() { 1, 2, 3, 4, 5, 6};
+        //Dicionário para colocar as listas com a ordem de imagens e seu indice de 0 a 39
         Dictionary<int, List<int>> data = new Dictionary<int, List<int>>();
-        Bitmap img1 = new Bitmap(@"D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Imagens\Final\Neutro.jpg");
-        Bitmap img2 = new Bitmap(@"D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Imagens\Final\NeutroSupina.jpg");
-        Bitmap img3 = new Bitmap(@"D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Imagens\Final\NeutroProna.jpg");
-        Bitmap img4 = new Bitmap(@"D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Imagens\Final\NeutroAbre.jpg");
-        Bitmap img5 = new Bitmap(@"D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Imagens\Final\NeutroFecha.jpg");
-        Bitmap img6 = new Bitmap(@"D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Imagens\Final\Supina.jpg");
-        Bitmap img7 = new Bitmap(@"D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Imagens\Final\Prona.jpg");
-        Bitmap img8 = new Bitmap(@"D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Imagens\Final\Abre.jpg");
-        Bitmap img9 = new Bitmap(@"D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Imagens\Final\Fecha.jpg");
-        Bitmap img10 = new Bitmap(@"D:\Arquivos\Graduaçao Eng. Biomedica\10º Periodo\Trabalho de Conclusão de Curso - TCC\Imagens\Final\Modelo.jpg");
+        
+        //Carregando todas as imagens usadas
+        Bitmap img1 = new Bitmap(@"C:\Users\BioLab\Desktop\GitHub\Protocolo_de_Coleta_EMG\img\Neutro.jpg");  
+        Bitmap img2 = new Bitmap(@"C:\Users\BioLab\Desktop\GitHub\Protocolo_de_Coleta_EMG\img\supina.jpg");
+        Bitmap img3 = new Bitmap(@"C:\Users\BioLab\Desktop\GitHub\Protocolo_de_Coleta_EMG\img\Prona.jpg");
+        Bitmap img4 = new Bitmap(@"C:\Users\BioLab\Desktop\GitHub\Protocolo_de_Coleta_EMG\img\Pince.jpg");
+        Bitmap img5 = new Bitmap(@"C:\Users\BioLab\Desktop\GitHub\Protocolo_de_Coleta_EMG\img\Fecha.jpg");
+        Bitmap img6 = new Bitmap(@"C:\Users\BioLab\Desktop\GitHub\Protocolo_de_Coleta_EMG\img\Estenda.jpg");
+        Bitmap img7 = new Bitmap(@"C:\Users\BioLab\Desktop\GitHub\Protocolo_de_Coleta_EMG\img\Flexiona.jpg");
+        Bitmap img8 = new Bitmap(@"C:\Users\BioLab\Desktop\GitHub\Protocolo_de_Coleta_EMG\img\PosiçãoEletrodos.jpg");
 
-        int flag = 0;
+        //Salvar o numero da coleta
+        int a = 1;
 
-        int x; int y;
-
-        int i = 0; int j = 0;
-
-        int a = 1; int b = 5; int c = 4;
-
-        bool iTwo = false;        bool iThree = false;        bool iFour = false;
-
-        int countOne = 0;        int countTwo = 0;        int countThree = 0;        int countFour = 0;
+        bool iRest = true;
+        // Ajustar a posicição de panels, labels, button...
+        int x;        int y;    
+        //Contagem da quantidade do numero de movimentos, total e parcial. contiInitial = incrementa as informações iniciais
+        int countInitial = 0;        int countT = 0;        int countP = 0;
+        // incrementam a lista de imagens e a imagem dentro da lista
+        int countTwo = 0;        int countOne = 0;        
 
 
         public MainForm()
@@ -62,7 +63,6 @@ namespace ProtocoloExperimental
             lb1.Visible = false;
             lb2.Visible = false;
             lb3.Visible = false;
-            lbCount.Visible = false;
             lbCountP.Visible = false;
             lbCountT.Visible = false;
             lbMoviment.Visible = false;
@@ -70,57 +70,45 @@ namespace ProtocoloExperimental
 
             pbMain.Visible = false;
             pbTwo.Visible = false;
+            pbTrigger.Visible = false;
 
-        }
+            x = ((pnMain.Size.Width - lbMoviment.Size.Width) / 2) + pbMain.Size.Width ;
+            y = (pnMain.Size.Height / 2);
+            lbMoviment.Location = new Point(x, y);
 
-
-
-        private void pnMain_Paint(object sender, PaintEventArgs e)
-        {
-            x = (pnMain.Size.Width) / 2;
+            x = (pnMain.Size.Width - pbMain.Size.Width) / 2;
             y = (pnMain.Size.Height - pbMain.Height) / 2;
             pbMain.Location = new Point(x, y);
 
-
-            x = (pnMain.Size.Width + pbMain.Width - (lbCount.Width)/2 ) / 2;
-            y = (pnMain.Size.Height - lbCount.Height);
-            lbMoviment.Location = new Point(x, y);
-
-
-            x = (pnMain.Size.Width + pbMain.Width - (lbCount.Width/2)) / 2;
-            y = (lbCount.Size.Height) / 2;
-            lbCount.Location = new Point(x, y);
+            pbTrigger.Width = 150;
+            pbTrigger.Height = 140;
+            x = (pnMain.Size.Width - 20) / 10;
+            y = (pnMain.Size.Height) - (pbTrigger.Size.Width) - 20;
+            pbTrigger.Location = new Point(x, y);
         }
 
 
         private void TimerTwo_Tick(object sender, EventArgs e)
         {
             lbStartMessage.Visible = true;
-            if (flag == 0)
+            if (countInitial == 0)
             {
-
                 lbStartMessage.Text = "Bem vindo ao experimento!!";
                 x = (pnMain.Size.Width - lbStartMessage.Width) / 2;
                 y = (pnMain.Size.Height - lbStartMessage.Height) / 2;
                 lbStartMessage.Location = new Point(x, y);
             }
-            if (flag == 1)
-            {
-                lbStartMessage.Text = "O experimento consiste em coletar sinais EMG de quatro canais, \nsendo cada um com um par de eletrodos ativos equidistantes em \ntorno do antebraço do voluntário com auxílio de um bracelete.";
-                x = (pnMain.Size.Width - lbStartMessage.Width) / 2;
-                y = (pnMain.Size.Height - lbStartMessage.Height) / 2;
-                lbStartMessage.Location = new Point(x, y);
-            }
-            if (flag == 2)
+
+            if (countInitial == 1)
             {
                 pbTwo.Visible = true;
-                pbTwo.Width = 191;
-                pbTwo.Height = 429;
+                pbTwo.Width = 964;
+                pbTwo.Height = 649;
                 x = (pnMain.Size.Width - pbTwo.Width) / 2;
                 y = (pnMain.Size.Height - pbTwo.Height) / 2;
                 pbTwo.Location = new Point(x, y);
 
-                pbTwo.Image = img10;
+                pbTwo.Image = img8;
                 lbStartMessage.Visible = false;
                 btOne.Visible = true;
                 btOne.Width = 180;
@@ -130,11 +118,11 @@ namespace ProtocoloExperimental
                 btOne.Location = new Point(x, y);
                 TimerTwo.Stop();
             }
-            flag++;
+            countInitial++;
         }
 
 
-        private void btOne_Click(object sender, EventArgs e)
+        private void BtOne_Click(object sender, EventArgs e)
         {
             btOne.Visible = false;
             btStart.Visible = true;
@@ -144,13 +132,12 @@ namespace ProtocoloExperimental
             lb1.Visible = true;
             lb2.Visible = true;
             lb3.Visible = true;
-            lbCount.Visible = true;
             lbCountP.Visible = true;
-            lbCountT.Visible = true;
-            lbMoviment.Visible = true;
+            lbCountT.Visible = true;            
 
             pbMain.Visible = true;
             pbTwo.Visible = false;
+            pbTrigger.Visible = true;
         }
 
 
@@ -163,12 +150,10 @@ namespace ProtocoloExperimental
             imageList.Add(img5);
             imageList.Add(img6);
             imageList.Add(img7);
-            imageList.Add(img8);
-            imageList.Add(img9);
 
             for (int i = 0; i < 10; i++)
             {
-                data.Add(i, fourMoviments.OrderBy(s => randonNum.Next()).Take(4).ToList());                
+                data.Add(i, SixMoviments.OrderBy(s => randonNum.Next()).Take(6).ToList());                
             }        
         }
 
@@ -182,201 +167,119 @@ namespace ProtocoloExperimental
 
             if (btStart.Text == "Iniciar a coleta")
             {
+                lbMoviment.Text = "Repouso";
+                lbMoviment.Visible = true;
                 btStart.Text = "Parar a coleta";
                 ImageShow();
                 TimerOne.Start();
+                DataSave();
+
             }
-            else
+            else if(btStart.Text == "Parar a coleta")
             {
+                pbMain.Image = imageList[0];
+                lbMoviment.Visible = false;
                 btStart.Text = "Iniciar a coleta";
                 TimerOne.Stop();
-                iTwo = false;
-                iThree = false;
-                iFour = false;
-                j = 0;
-                i = 0;
-                c = 3;
-                countOne = 0;
+                TimerThree.Stop();
                 countTwo = 0;
-                countThree = 0;
-                countFour = 0; 
+                countOne = 0;
+                countT = 0;
+                countP = 0; 
                 lbCountT.Text = "0";
                 lbCountP.Text = "0";
             }         
         }
-
-
-        private void DataList()
-        {
-            if (pbMain.Image == imageList[0])
-                dataList[i] = 0;
-
-            if (pbMain.Image == imageList[1])
-                dataList[i] = 1;
-
-            if (pbMain.Image == imageList[2])            
-                dataList[i] = 2;
-            
-            if (pbMain.Image == imageList[3])
-                dataList[i] = 3;
-
-            if (pbMain.Image == imageList[4])
-                dataList[i] = 4;
-
-            if (pbMain.Image == imageList[5])
-                dataList[i] = 5;
-
-            if (pbMain.Image == imageList[6])
-                dataList[i] = 6;
-
-            if (pbMain.Image == imageList[7])
-                dataList[i] = 7;
-
-            if (pbMain.Image == imageList[8])
-                dataList[i] = 8;
-
-            i++;
-        }
+        
 
         private void MovimentText(Image x)
         {
             if (x == img2)
             {
-                lbMoviment.Text = "Tempo em repouso";
+                lbMoviment.Text = " Supine";
             }
-
+            if (x == img3)
+            {
+                lbMoviment.Text = "  Prone";
+            }
+            if (x == img4)
+            {
+                lbMoviment.Text = "  Pince";                                   
+            }
+            if (x == img5)
+            {
+                lbMoviment.Text = "  Feche";
+            }
+            if (x == img6)
+            {
+                lbMoviment.Text = "Estenda";
+            }
+            if (x == img7)
+            {
+                lbMoviment.Text = "Flexione";
+            }
         }
+
+
         private void TimerOne_Tick(object sender, EventArgs e)
         {
-
-            if (j < 10)
+            if (iRest == true)
             {
-                if (countTwo < 4)
+                TimerOne.Interval = 3000;
+                lbMoviment.Text = "Repouso";
+                pbTrigger.BackColor = Color.White;
+                pbMain.Image = imageList[0];
+                iRest = false;
+                switch (countTwo)
                 {
-                    if (countOne < 3)
-                    {
-                        c--;
-                        lbCount.Text = c.ToString();
-                        pbMain.Image = imageList[0];
-                        lbMoviment.Text = "Tempo em repouso";
-                    }
-                    if (countOne >= 3 && countOne < 6)
-                    {
-                        TimeMovement(3);
-
-                        if (pbMain.Image == imageList[0] && iTwo == false
-                               && iThree == false && iFour == false)
-                        {
-                            pbMain.Image = imageList[data[j][0]];
-                        }
-                        if (iTwo == true)
-                        {
-                            pbMain.Image = imageList[data[j][1]];
-                            iTwo = false;
-                        }
-                        if (iThree == true)
-                        {
-                            pbMain.Image = imageList[data[j][2]];
-                            iThree = false;
-                        }
-                        if (iFour == true)
-                        {
-                            pbMain.Image = imageList[data[j][3]];
-                            iFour = false;
-                        }
-                    }
-                    if (countOne >= 6 && countOne < 8)
-                    {
-                        TimeMovement(6);
-
-                        if (pbMain.Image == imageList[data[j][0]])
-                        {
-                            iTwo = true;
-                            pbMain.Image = imageList[data[j][0] + 4];
-                        }
-
-                        if (pbMain.Image == imageList[data[j][1]])
-                        {
-                            iThree = true;
-                            pbMain.Image = imageList[data[j][1] + 4];
-                        }
-                        if (pbMain.Image == imageList[data[j][2]])
-                        {
-                            iFour = true;
-                            pbMain.Image = imageList[data[j][2] + 4];
-                        }
-
-                        if (pbMain.Image == imageList[data[j][3]])
-                        {
-                            pbMain.Image = imageList[data[j][3] + 4];
-                        }
-                    }
-                    if (countOne == 8)
-                    {
-                        lbCount.Text = c.ToString();
-                        c = 4;
-                        countThree++;
-                        countFour++;
-                        lbCountT.Text = countThree.ToString();
-                        lbCountP.Text = countFour.ToString();
-                        countOne = -1;
-                        countTwo++;
-                    }
-
-                    
-                    countOne++;
-                    DataList();
-                }
-                else
-                {
-                    j++;
-                    countTwo = 0;
+                    case 10:
+                        countP = 0;
+                        lbCountP.Text = "0";
+                        btStart.Text = "Iniciar a coleta";
+                        countTwo = 0;
+                        TimerOne.Stop();
+                        a++;
+                        break;
                 }
             }
             else
             {
-                i = 0;
-                j = 0;
-                countFour = 0;
-                TimerOne.Stop();
-                lbCountP.Text = "0";
-                btStart.Text = "Iniciar a coleta";
-
-                DataSave();
-                a++;
-                b++;
+                TimerOne.Interval = 3000;
+                MovimentText(pbMain.Image);
+                pbMain.Image = imageList[data[countTwo][countOne++]];
+                countT++;
+                lbCountT.Text = countT.ToString();
+                countP++;
+                lbCountP.Text = countP.ToString();
+                MovimentText(pbMain.Image);
+                pbTrigger.BackColor = Color.Black;
+                switch (countOne)
+                {
+                    case 6:
+                        countOne = 0;
+                        countTwo++;
+                        break;
+                }
+                iRest = true;
             }
-
 
         }
 
-        private void TimeMovement(int x)
-        {
-            if (countOne == x)
-            {
-                c = 3;
-            }
-            lbCount.Text = c.ToString();
-            c--;
-        }
+        
+
         private void DataSave()
         {
-            var fullPathOne = @"C:\" + tbName.Text + "-Coleta-" + a.ToString() + ".txt";
-            using (var write = new StreamWriter(fullPathOne))
-            {
-                foreach (var n in dataList)
-                    write.WriteLine(n);
-
-            }
-            var fullPathTwo = @"C:\" + tbName.Text + "-Coleta-" + b.ToString() + ".txt";
-            using (var write = new StreamWriter(fullPathTwo))
-            {
-                foreach (var n in dataList)
-                    if (n != dataList[0])
+            var File = @"C:\Users\BioLab\Desktop\ColetaEMG\EberCoPiloto\Resposta\" + tbName.Text + "-Resposta.txt";
+            using (var write = new StreamWriter(File))
+                foreach (KeyValuePair<int, List<int>> N in data)
+                {
+                    write.Write("[{0}]\r\n", N.Key);
+                    foreach (var item in N.Value)
                     {
-                        write.WriteLine(n);
+                        write.Write("{0}\r\n", item);
                     }
-            }
+                }
         }
-    }
+    }    
+ 
 }
