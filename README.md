@@ -3,20 +3,14 @@ Código do protocolo de coleta do trabalho SVM-TCC
 
 ## Conteúdo  
 
-### Imagens de 7 movimentos de mão:  
+### Imagens de 7 movimentos de mão:
   
-* *Pronação*
-  
-* Supinação
-  
-* Flexão
-  
-* Extenção
-  
+* *Pronação*  
+* Supinação  
+* Flexão  
+* Extenção  
 * Fechamento de mão
-  
-* Abertura de mão
-  
+* Abertura de mão  
 * Pinçamento dos dedos
 
   
