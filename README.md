@@ -1,9 +1,9 @@
-﻿# Protocolo_de_Coleta_EMG
-Código do protocolo de coleta do trabalho SVM-TCC
+﻿# Protocolo_de_Coleta_EMG  
+Código do protocolo de coleta do trabalho SVM-TCC  
 
 ## Conteúdo  
 
-### * Imagens de 7 movimentos de mão:  
+### Imagens de 7 movimentos de mão:  
   
 	* Pronação
   
@@ -20,4 +20,4 @@ Código do protocolo de coleta do trabalho SVM-TCC
 	* Pinçamento dos dedos
 
   
-### * Código em C#
+### Código em C#
