@@ -5,19 +5,19 @@ Código do protocolo de coleta do trabalho SVM-TCC
 
 ### Imagens de 7 movimentos de mão:  
   
-	* Pronação
+* *Pronação*
   
-	* Supinação
+* Supinação
   
-	* Flexão
+* Flexão
   
-	* Extenção
+* Extenção
   
-	* Fechamento de mão
+* Fechamento de mão
   
-	* Abertura de mão
+* Abertura de mão
   
-	* Pinçamento dos dedos
+* Pinçamento dos dedos
 
   
 ### Código em C#
