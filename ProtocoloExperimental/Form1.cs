@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Threading;
 
 namespace ProtocoloExperimental
 {
@@ -181,7 +180,6 @@ namespace ProtocoloExperimental
                 lbMoviment.Visible = false;
                 btStart.Text = "Iniciar a coleta";
                 TimerOne.Stop();
-                TimerThree.Stop();
                 countTwo = 0;
                 countOne = 0;
                 countT = 0;
@@ -269,7 +267,7 @@ namespace ProtocoloExperimental
 
         private void DataSave()
         {
-            var File = @"C:\Users\BioLab\Desktop\ColetaEMG\EberCoPiloto\Resposta\" + tbName.Text + "-Resposta.txt";
+            var File = @"C:\Users\BioLab\Desktop\GitHub\Protocolo_de_Coleta_EMG\Respostas\" + tbName.Text + "-Resposta.txt";
             using (var write = new StreamWriter(File))
                 foreach (KeyValuePair<int, List<int>> N in data)
                 {
@@ -280,6 +278,7 @@ namespace ProtocoloExperimental
                     }
                 }
         }
+
     }    
  
 }
